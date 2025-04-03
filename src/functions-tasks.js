@@ -33,8 +33,11 @@ function getCurrentFunctionName() {
  *
  */
 function getFunctionBody(func) {
-  return func;
-  // throw new Error('Not implemented');
+  let result;
+  if (typeof func === 'function') {
+    result = func.toString();
+  } else result = '';
+  return result;
 }
 
 /**
@@ -51,9 +54,9 @@ function getFunctionBody(func) {
  *  ]) => [0, 1, 2]
  *
  */
-function getArgumentsCount(funcs) {
-  return funcs.arguments.length;
-  // throw new Error('Not implemented');
+function getArgumentsCount(/* funcs */) {
+  // arguments.length;
+  throw new Error('Not implemented');
 }
 
 /**
