@@ -94,14 +94,15 @@ function getPowerFunction(exponent) {
  *   getPolynom()      => null
  */
 function getPolynom(...args) {
-  const arr = [...args];
+  const arr = [...args].reverse();
   if (arr.length === 0) {
     return null;
   }
   return function f(x) {
-    if (!arr[1]) arr[1] = 0;
-    if (!arr[2]) arr[2] = 0;
-    return arr[2] * x ** 2 + arr[1] * x + arr[0];
+    const a = arr[2] || 0;
+    const b = arr[1] || 0;
+    const c = arr[0] || 0;
+    return a * x ** 2 + b * x + c;
   };
   // throw new Error('Not implemented');
 }
